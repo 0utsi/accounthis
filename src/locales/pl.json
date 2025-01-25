@@ -1,6 +1,4 @@
 {
-	"auth": {
-		"login": "Zaloguj",
-		"register": "Zarejestruj"
-	}
+	"login": "Zaloguj",
+	"register": "Zarejestruj"
 }
