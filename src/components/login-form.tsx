@@ -2,12 +2,12 @@
 
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import TextInput from '../../components/text-input';
+import TextInput from './text-input';
 import { useTranslation } from 'react-i18next';
-import { Button, Stack } from '@mui/material';
-import { useAuth } from '../../context/auth-provider';
+import { Box, Button, Stack, Typography } from '@mui/material';
+import { useAuth } from '../context/auth-provider';
 import * as yup from 'yup';
-import CheckboxInput from '../../components/check-box';
+import CheckboxInput from './check-box';
 
 interface FormInput {
     email: string;
@@ -41,6 +41,7 @@ function LoginForm() {
     };
 
     return (
+		<Box className="flex flex-col items-center justify-center min-h-screen">
         <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(onSubmit)}>
                 <Stack spacing={2}>
@@ -73,6 +74,7 @@ function LoginForm() {
                 </Stack>
             </form>
         </FormProvider>
+		</Box>
     );
 }
 

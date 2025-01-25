@@ -77,45 +77,45 @@ function ThemeProvider({ children }: ProviderProps) {
                         secondary: {
                             main: '#82B29A',
                         },
-                        // sidebar: {
-                        //     main:
-                        //         mode === ThemeMode.Light
-                        //             ? '#3C405B'
-                        //             : '#121212',
-                        //     light: '#3C405B',
-                        //     dark: '#3C405B',
-                        //     contrastText: '#fff',
-                        // },
-                        // form: {
-                        //     isDirty: {
-                        //         main:
-                        //             mode === ThemeMode.Light
-                        //                 ? yellow[50]
-                        //                 : yellow[700],
-                        //         hover:
-                        //             mode === ThemeMode.Light
-                        //                 ? yellow[100]
-                        //                 : yellow[800],
-                        //     },
-                        //     isError: {
-                        //         main:
-                        //             mode === ThemeMode.Light
-                        //                 ? red[50]
-                        //                 : red[700],
-                        //         hover:
-                        //             mode === ThemeMode.Light
-                        //                 ? red[100]
-                        //                 : red[800],
-                        //     },
-                        // },
-                        // layoutBackground: {
-                        //     default:
-                        //         mode === ThemeMode.Light
-                        //             ? '#F7F9FB'
-                        //             : '#121212f4',
-                        //     topBar:
-                        //         mode === ThemeMode.Light ? '#fff' : '#121212',
-                        // },
+                        sidebar: {
+                            main:
+                                mode === ThemeMode.Light
+                                    ? '#3C405B'
+                                    : '#121212',
+                            light: '#3C405B',
+                            dark: '#3C405B',
+                            contrastText: '#fff',
+                        },
+                        form: {
+                            isDirty: {
+                                main:
+                                    mode === ThemeMode.Light
+                                        ? yellow[50]
+                                        : yellow[700],
+                                hover:
+                                    mode === ThemeMode.Light
+                                        ? yellow[100]
+                                        : yellow[800],
+                            },
+                            isError: {
+                                main:
+                                    mode === ThemeMode.Light
+                                        ? red[50]
+                                        : red[700],
+                                hover:
+                                    mode === ThemeMode.Light
+                                        ? red[100]
+                                        : red[800],
+                            },
+                        },
+                        layoutBackground: {
+                            default:
+                                mode === ThemeMode.Light
+                                    ? '#F7F9FB'
+                                    : '#121212f4',
+                            topBar:
+                                mode === ThemeMode.Light ? '#fff' : '#121212',
+                        },
                     },
                     components: {
                         MuiTypography: {
