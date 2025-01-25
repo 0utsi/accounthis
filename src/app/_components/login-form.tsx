@@ -2,12 +2,12 @@
 
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import TextInput from './text-input';
+import TextInput from '../../components/text-input';
 import { useTranslation } from 'react-i18next';
 import { Button, Stack } from '@mui/material';
-import { useRouter } from 'next/navigation';
+import { useAuth } from '../../context/auth-provider';
 import * as yup from 'yup';
-import CheckboxInput from './check-box'
+import CheckboxInput from '../../components/check-box';
 
 interface FormInput {
     email: string;
@@ -16,7 +16,7 @@ interface FormInput {
 }
 
 function LoginForm() {
-    const { push } = useRouter();
+    const { login } = useAuth();
     const { t } = useTranslation();
     const methods = useForm<FormInput>({
         defaultValues: {
@@ -36,13 +36,13 @@ function LoginForm() {
         ),
     });
 
-    const onSubmit: SubmitHandler<FormInput> = () => {
-        push('/choose-company');
+    const onSubmit: SubmitHandler<FormInput> = async (data) => {
+        await login(data.email, data.password);
     };
 
     return (
-        <>
-            <FormProvider {...methods}>
+        <FormProvider {...methods}>
+            <form onSubmit={methods.handleSubmit(onSubmit)}>
                 <Stack spacing={2}>
                     <TextInput<FormInput>
                         name="email"
@@ -67,15 +67,12 @@ function LoginForm() {
                         type="submit"
                         size="large"
                         className="text-lg font-medium tracking-wider"
-                        onClick={() => {
-                            methods.handleSubmit(onSubmit)();
-                        }}
                     >
                         {t('Login')}
                     </Button>
                 </Stack>
-            </FormProvider>
-        </>
+            </form>
+        </FormProvider>
     );
 }
 
