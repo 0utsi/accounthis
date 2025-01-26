@@ -1,6 +1,8 @@
 {
-	"auth": {
-		"login": "Zaloguj",
-		"register": "Zarejestruj"
-	}
+	"signIn": "Sign in",
+	"signUp": "Sign up",
+	"register": "Register",
+	"noAcc": "No account? Sign up now",
+	"haveAcc": "Have account? Sign in",
+	"passwordRepeat": "Repeat password"
 }
