@@ -9,6 +9,13 @@ const config: Config = {
 		"./src/components/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
+		extend: {
+			fontFamily: {
+				sans: ['Inter', 'Arial', 'sans-serif'],
+				serif: ['Georgia', 'serif'],
+				mono: ['Menlo', 'monospace'],
+			},
+		},
 		colors: {
 			green,
 			grey,
@@ -21,6 +28,13 @@ const config: Config = {
 			regular: '400',
 			medium: '500',
 			bold: '700',
+		},
+		fontSize: {
+			xs: '9px',
+			sm: '12px',
+			md: '15px',
+			xl: '18px',
+			xxl: '22px'
 		},
 		spacing: {
 			0: '0rem', // 0px

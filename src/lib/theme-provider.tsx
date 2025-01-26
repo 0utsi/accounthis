@@ -18,6 +18,7 @@ import Language from '../constants/enums/language';
 import useGetLocale from '../hooks/use-get-locale';
 import { useLocalStorage } from 'react-use';
 import { Roboto } from 'next/font/google';
+import { LineWeight } from '@mui/icons-material';
 
 interface ProviderProps {
     readonly children: ReactNode;
