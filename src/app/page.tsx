@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '../context/auth-provider';
+import { useAuth } from '../providers/auth-provider';
 import PageLoading from '../components/ui/page-loading';
 
 export default function Home() {

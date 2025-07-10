@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import TextInput from '../text-input';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Stack, Typography } from '@mui/material';
-import { useAuth } from '../../context/auth-provider';
+import { useAuth } from '../../providers/auth-provider';
 import * as yup from 'yup';
 import CheckboxInput from '../check-box';
 import { useRouter } from 'next/navigation';
