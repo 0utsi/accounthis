@@ -1,12 +1,11 @@
-// components/ChatComposer.tsx
 'use client'
 
 import React, { useState, useCallback } from 'react'
-import { Box, TextField, Button, CircularProgress } from '@mui/material'
+import { Box, TextField, CircularProgress } from '@mui/material'
 import { generateReply } from '@/lib/api'
+import Button from '../button'
 
 export interface ChatComposerProps {
-  /** Callback with bot response text */
   onSend: (text: string) => void
 }
 
@@ -62,10 +61,8 @@ export default function ChatComposer({ onSend }: ChatComposerProps) {
         variant="contained"
         onClick={handleSend}
         disabled={loading || !input.trim()}
-        sx={{ whiteSpace: 'nowrap' }}
-      >
-        {loading ? <CircularProgress size={20} color="inherit" /> : 'Send'}
-      </Button>
+        sx={{ whiteSpace: 'nowrap', backgroundColor: "inherit", borderRadius: "50%" }}
+        />
     </Box>
   )
 }

@@ -20,13 +20,14 @@ const ChatInput = forwardRef<HTMLInputElement, ChatInputProps>(
       onChange,
       onSend,
       isLoading = false,
-      placeholderText = 'Type your message... 🎤',
+      placeholderText = 'Whats up?',
       disabled,
       sx,
       ...props
     },
     ref
   ) => {
+
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter' && !e.shiftKey && !isLoading) {
         e.preventDefault();
@@ -45,35 +46,7 @@ const ChatInput = forwardRef<HTMLInputElement, ChatInputProps>(
         onChange={onChange}
         onKeyDown={handleKeyDown}
         disabled={disabled || isLoading}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <Send
-                size={20}
-                className={`cursor-pointer ${
-                  isLoading ? 'opacity-50' : 'hover:text-blue-500'
-                }`}
-                onClick={() => !isLoading && onSend()}
-                aria-label="Send message"
-              />
-            </InputAdornment>
-          ),
-        }}
-        sx={{
-          bgcolor: 'background.paper',
-          borderRadius: 2,
-          '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'grey.300',
-          },
-          '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'grey.400',
-          },
-          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'primary.main',
-          },
-          p: 0,
-          ...sx,
-        }}
+        sx={{height: ""}}
       />
     );
   }

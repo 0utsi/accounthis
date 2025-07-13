@@ -10,12 +10,13 @@ const BASE_URL = 'http://localhost:8000'
 export async function generateReply(
   body: GenerateRequest,
 ): Promise<GenerateResponse> {
+  
   const res = await fetch(`${BASE_URL}/generate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   })
-
+  console.log(body, res)
   if (!res.ok) {
     let detail = `Request failed (${res.status})`
     try {

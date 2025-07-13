@@ -18,7 +18,6 @@ import Language from '../constants/enums/language';
 import useGetLocale from '../hooks/use-get-locale';
 import { useLocalStorage } from 'react-use';
 import { Roboto } from 'next/font/google';
-import { LineWeight } from '@mui/icons-material';
 
 interface ProviderProps {
     readonly children: ReactNode;
@@ -72,21 +71,15 @@ function ThemeProvider({ children }: ProviderProps) {
                     palette: {
                         mode,
                         primary: {
-                            main: '#DF7A5E',
-                            contrastText: '#fff',
+                            main: '#0F4C5C',
+                            100: '#9A031E',
+                            200: '#5F0F40',
                         },
                         secondary: {
-                            main: '#82B29A',
+                            main: '#E36414',
+                            100: '#FB8B24'
                         },
-                        sidebar: {
-                            main:
-                                mode === ThemeMode.Light
-                                    ? '#3C405B'
-                                    : '#121212',
-                            light: '#3C405B',
-                            dark: '#3C405B',
-                            contrastText: '#fff',
-                        },
+                        
                         form: {
                             isDirty: {
                                 main:

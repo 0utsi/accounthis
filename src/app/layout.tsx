@@ -23,7 +23,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className="bg-green-500">
+      <body className="bg-primary-main">
           <AuthProvider>
             <I18nextProvider lng={currentLanguage}>
             <ThemeProvider>

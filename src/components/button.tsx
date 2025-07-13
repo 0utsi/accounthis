@@ -1,11 +1,14 @@
 import React, { forwardRef } from 'react';
 import { Button as MUIButton, ButtonProps as MUIButtonProps, CircularProgress } from '@mui/material';
+import { SendIcon } from 'lucide-react';
 
 export interface ButtonProps extends MUIButtonProps {
   isLoading?: boolean;
   loadingLabel?: React.ReactNode;
   spinnerPosition?: 'start' | 'end';
   spinnerSize?: number;
+  className?: string;
+  icon?: React.ReactNode;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -16,6 +19,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       spinnerPosition = 'start',
       spinnerSize = 20,
       disabled,
+      className,
       children,
       ...props
     },
@@ -31,9 +35,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <MUIButton
         {...props}
         ref={ref}
+        className={className}
         disabled={disabledState}
         aria-busy={isLoading}
-        sx={{ textTransform: 'none', ...props.sx }}
+        sx={{ ...props.sx, backgroundColor: 'red' }}
       >
         {isLoading && spinnerPosition === 'start' && (
           <CircularProgress
@@ -42,6 +47,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             sx={{ mr: 1 }}
             aria-hidden="true"
           />
+        )}
+
+        {!isLoading && (
+            <SendIcon size={64} />
         )}
 
         {content}
